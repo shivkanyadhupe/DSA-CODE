@@ -1,0 +1,38 @@
+Given an array (or string), the task is to reverse the array/string.
+
+Examples:
+
+Input: original_array[] = {1, 2, 3} Output: array_reversed[] = {3, 2, 1}
+
+Input: original_array[] = {4, 5, 1, 2}
+Output: array_reversed[] = {2, 1, 5, 4}
+
+#CODE
+public class ReverseArray {
+    public static void reverse(int arr[])
+    {
+        System.out.println("original Array");
+        for(int i=0; i<arr.length;i++)
+        {
+            System.out.print(arr[i] +" ");
+        }
+        System.out.println(" ");
+        int first =0, last = arr.length-1;
+        while (first<=last) {
+            int temp= arr[last];
+            arr[last] = arr[first];
+            arr[first]= temp;
+            first++;
+            last--;
+        }
+        }
+    public static void main(String args[])
+    {
+        int arr[] = {4, 5, 1, 2};
+        reverse(arr);
+        for(int i=0; i<arr.length;i++)
+        {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
